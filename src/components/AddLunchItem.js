@@ -8,6 +8,8 @@ export default function AddLunchItem() {
             id="lunchName"
             type="text" 
             placeholder='lunch Name' 
+            value={lname}
+            onChange={(e)=> setName(e.target.value)}
             />
         <input 
             id="ing1"

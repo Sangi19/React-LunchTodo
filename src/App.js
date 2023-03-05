@@ -5,15 +5,7 @@ import ShowLunchItem from './components/ShowLunchItem';
 
 function App(props) {
   const [lunchList, setLunchList] = useState(props.lunchList)
-  const viewLunchList=lunchList.map((item)=> (
-    <ShowLunchItem 
-      id={item.id}
-      dish={item.dish}
-      ingredient1={item.ingredient1}
-      ingredient2={item.ingredient2}
-      key={item.id}
-    />
-  ))
+
 
 
   return (
@@ -31,7 +23,8 @@ function App(props) {
                     <div>Actions</div>
                 </div>              
             </li> 
-            {viewLunchList}
+            {lunchList.map(item=>
+              <ShowLunchItem item={item} lunchList={lunchList} />)}
           </ul>
       </div>
     </div>
